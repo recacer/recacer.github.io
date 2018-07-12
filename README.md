@@ -26,11 +26,10 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 >>>>>缩进五>>>>>
 
 ```javascript
-window.location.href
-window.location.href
-window.location.href
+let start = '```javascript'
+let end = '```'
 ```
 
-* tab0 第一种点 0 个tab + *
-  * tab1 第二种点 1 个tab + *
-    * tab2 第三种点 2 个tab + *
+* tab0 第一种点 0个tab + *
+  * tab1 第二种点 1个tab + *
+    * tab2 第三种点 2个tab + *
