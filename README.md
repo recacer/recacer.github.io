@@ -9,9 +9,11 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 #### 基本操作:
 1. X: 
 2. cd x:\xx\xxx\xxx 
-    X指的是d/e/f盘
+*X指的是d/e/f盘
 
 * git add .
 * git commit -m "注释"
 * git push
 * 然后输入账号 (回车) 密码(看不到输入了什么但实际上操作得到的,然后还是回车,跟着就GG了)
+
+Use the `printf()` function.
