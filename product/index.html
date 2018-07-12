@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title></title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="js/jquery/jquery-1.8.3.min.js"></script>
+    <script src="js/vue/vue.min.js"></script>
+</head>
+<body>
+<div class="wrap pdb" id="list">
+    <div class="indexHeader">
+        <div class="swiper">
+            <div class="imgsBor">
+                <div class="imgs">
+                    <img v-on:click="href(i.srcUrl ? 'iframe.html?link=' + i.srcUrl : '')" :src="i.imgUrl" v-for="i in banner" alt=""/>
+                </div>
+            </div>
+            <div class="points" v-if="banner.length > 2">
+                <div class="point" v-for="(i,v) in banner" v-if="v < banner.length - 1"></div>
+            </div>
+            <img onclick="window.location.href = 'http://www.ailibuli.cn/closeLicaiShiPage'" src="image/indexBack.png" alt="" class="back"/>
+        </div>
+        <div class="products">
+            <div v-on:click="href('list.html?type=fixed')">
+                <img src="image/icon_fixed.png" alt=""/>
+                <span>固定收益</span>
+            </div>
+            <div v-on:click="href('list.html?type=sunPrivate')">
+                <img src="image/icon_private.png" alt=""/>
+                <span>阳光私募</span>
+            </div>
+            <div v-on:click="linkNone()">
+                <img src="image/icon_publicly.png" alt=""/>
+                <span>公募基金</span>
+            </div>
+            <div v-on:click="href('list.html?type=insurance')">
+                <img src="image/icon_insurance.png" alt=""/>
+                <span>保险</span>
+            </div>
+            <div v-on:click="href('list.html?type=private')">
+                <img src="image/icon_equity.png" alt=""/>
+                <span>私募股权</span>
+            </div>
+            <!--<div v-on:click="href('list.html?type=immigrant')">-->
+            <div v-on:click="href('list.html?type=immigrant')">
+                <img src="image/icon_immigrant.png" alt=""/>
+                <span>移民地产</span>
+            </div>
+            <div v-on:click="linkNone()">
+                <img src="image/icon_overseas.png" alt=""/>
+                <span>海外投资</span>
+            </div>
+            <div v-on:click="linkNone()">
+                <img src="image/icon_other.png" alt=""/>
+                <span>其他服务</span>
+            </div>
+        </div>
+        <!--<div v-if="status != 1" class="application" onclick="window.location.href = 'https://www.ailibuli.cn/licaishiRenZhenFromProduct'"></div>-->
+    </div>
+    <div class="fixed w" v-if="message&&message.fixedIncomeList.length > 0">
+        <div class="indexTitle">
+            <div class="blue">固定收益</div>
+            <div class="more f24" v-on:click="href('list.html?type=fixed')">查看更多</div>
+        </div>
+        <div class="list w">
+            <div class="ofh bor" v-for="i in message.fixedIncomeList" v-on:click="href('productDetail.html?type=fixed&areId='+i.areID)">
+                <div class="fl l">
+                    <div>
+                        <div class="orange f48" v-html="i.ExpectedEarningMin + '<span class=\'orange f24\'>%</span>'"></div>
+                        <div class="f24">预期年化</div>
+                    </div>
+                </div>
+                <div class="fl r">
+                    <div class="f28 t one" v-text="i.artName">&nbsp;</div>
+                    <div class="f22 s one">&nbsp;</div>
+                    <div class="ofh">
+                        <div class="fl">
+                            <div>
+                                <div class="orange" v-text="i.startpoint">&nbsp;元</div>
+                                <div class="f22">起投金额</div>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div>
+                                <div class="orange" v-text="i.DeadlineNumber || '- -'">&nbsp;</div>
+                                <div class="f22">产品期限</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="private normal w" v-if="message&&message.sunPrivatePlacementList.length > 0">
+        <div class="indexTitle mbn">
+            <div class="blue">阳光私募</div>
+            <div class="more f24" v-on:click="href('list.html?type=sunPrivate')">查看更多</div>
+        </div>
+        <div class="list w">
+            <div class="bor" v-for="i in message.sunPrivatePlacementList" v-on:click="href('productDetail.html?type=sunPrivate&areId='+i.areID)">
+                <div class="f30 t one" v-text="i.artName">&nbsp;</div>
+                <div class="f22">&nbsp;</div>
+                <div class="ofh">
+                    <div class="fl">
+                        <div class="orange" v-text="i.SubscribeStartPoint">&nbsp;</div>
+                        <div class="f24">起投金额</div>
+                    </div>
+                    <div class="fl">
+                        <div class="orange" v-text="i.fundScale || '- -'">&nbsp;</div>
+                        <div class="f24">基金规模</div>
+                    </div>
+                    <div class="fl none">
+                        <div class="orange" v-text="i.FundRenewal || '- -'">&nbsp;</div>
+                        <div class="f24">产品期限</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="private normal w" v-if="message&&message.privateEquityList.length > 0">
+        <div class="indexTitle mbn">
+            <div class="blue">私募股权</div>
+            <div class="more f24" v-on:click="href('list.html?type=private')">查看更多</div>
+        </div>
+        <div class="list w">
+            <div class="bor" v-for="i in message.privateEquityList" v-on:click="href('productDetail.html?type=private&areId='+i.areID)">
+                <div class="f30 t one" v-text="i.artName">&nbsp;</div>
+                <div class="f22">&nbsp;</div>
+                <div class="ofh">
+                    <div class="fl">
+                        <div class="orange" v-text="i.SubscribeStartPoint">&nbsp;</div>
+                        <div class="f24">起投金额</div>
+                    </div>
+                    <div class="fl">
+                        <div class="orange" v-text="i.fundScale">&nbsp;</div>
+                        <div class="f24">基金规模</div>
+                    </div>
+                    <div class="fl none">
+                        <div class="orange" v-text="i.Deadline || '- -'">&nbsp;</div>
+                        <div class="f24">产品期限</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="immigrant normal">
+        <div class="indexTitle">
+            <div class="blue">固定收益</div>
+            <div class="more f24">查看更多</div>
+        </div>
+        <div class="list">
+            <div>
+                <div class="f30 t">移民地产名称</div>
+                <div class="f22">2017年最具价值的投资策略</div>
+                <div class="ofh">
+                    <div class="fl">
+                        <div class="orange">500,000</div>
+                        <div class="f24">投资金额(美元)</div>
+                    </div>
+                    <div class="fl">
+                        <div class="orange">60</div>
+                        <div class="f24">办理周期(天)</div>
+                    </div>
+                    <div class="fl none">
+                        <div class="orange">住房</div>
+                        <div class="f24">投资对象</div>
+                    </div>
+                </div>
+                <div class="bottomMsg">移民地区：美国</div>
+            </div>
+        </div>
+    </div>-->
+    <div class="insurance w" v-if="message&&message.domesticInsuranceList.length > 0">
+        <div class="indexTitle mbn">
+            <div class="blue">保险</div>
+            <div class="more f24" v-on:click="href('list.html?type=insurance')">查看更多</div>
+        </div>
+        <div class="list w">
+            <div class="bor" v-for="i in message.domesticInsuranceList" v-on:click="href('productDetail.html?type=insurance&areId='+i.areID)">
+                <div class="ofh">
+                    <div class="fl img">
+                        <img :src="i.logoImage" alt=""/>
+                    </div>
+                    <div class="fl content">
+                        <div class="f32 one" v-text="i.artName">&nbsp;</div>
+                        <div class="one gray" v-text="i.ProductLight">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading" v-show="loadingShow">
+        <div class="load-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<script>
+    sessionStorage.getItem('t') ? sessionStorage.clear('t') : null;
+    var created = function () {
+        var _this = this;
+        _this.requestFun('/financial/h5/queryBannerByProduct').then(function(data){
+            data.bannerList.push(data.bannerList[0]);
+            _this.banner = data.bannerList;
+            if(_this.banner.length > 2){
+                setTimeout(function(){
+                    _this.bannerFun();
+                },0)
+            }
+        });
+        _this.requestFun('/business/getProductList').then(function(data){
+            _this.message = data;
+        });
+        if(window.location.href.indexOf('fpId=') != -1){
+            sessionStorage.setItem('fpId',window.location.href.match(/fpId=[^&]+/)[0].split('=')[1]);
+        }
+    }
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
