@@ -18,8 +18,5 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 
 `
 只是一个普通的测试
-if(window.location.href.indexOf('fpId=') != -1){
-    sessionStorage.setItem('fpId',window.location.href.match(/fpId=[^&]+/)[0].split('=')[1]);
-}
 `
 
