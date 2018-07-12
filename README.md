@@ -3,7 +3,12 @@
 
 https://recacer.github.io/
 
-#### 使用命令行 到指定目录(这个目录当然要跟git有关联的) 基本 X: => cd x:\xx\xxx\xxx (X:d/e/f盘)
+#### 使用命令行 到指定目录(这个目录当然要跟git有关联的) 
+#### 基本操作:
+1. X: 
+2. cd x:\xx\xxx\xxx 
+* (X指的是d/e/f盘)
+
 * git add .
 * git commit -m "注释"
 * git push
