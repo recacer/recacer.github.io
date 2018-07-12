@@ -18,4 +18,5 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 
 ```javascript
 document.getElementById("ts").innerHTML="Hello"
+document.getElementById("ts").innerHTML="Hello"
 ```
