@@ -3,11 +3,13 @@
 
 https://recacer.github.io/
 
-#### 使用命令行 到指定目录(这个目录当然要跟git有关联的) 
+new repository => Repository name (输入项目名称,如:recacer.github.io) => create repository(绿色那个按钮) => 下载到本地
+
+#### 使用命令行 到指定目录(这个目录就是刚才楼上新建的项目,已经下载到本地) 
 #### 基本操作:
 1. X: 
 2. cd x:\xx\xxx\xxx 
-* (X指的是d/e/f盘)
+    X指的是d/e/f盘
 
 * git add .
 * git commit -m "注释"
