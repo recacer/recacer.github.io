@@ -1,4 +1,4 @@
-这是干什么的
+就是这样访问这个项目
 -
 
-https://recacer.github.io/index.html
+https://recacer.github.io/
