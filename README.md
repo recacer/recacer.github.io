@@ -22,10 +22,6 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 >>>>缩进四
 >>>>>缩进五
 
-  tab1
-    tab2
-      tab3
-
 ```javascript
 window.location.href
 window.location.href
