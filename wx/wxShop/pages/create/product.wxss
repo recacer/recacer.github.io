@@ -1,0 +1,76 @@
+.middle{
+  background-color: #fff;
+  margin-bottom: 140rpx;
+}
+.selectProduct,.selectType{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.selectProduct view,.selectType view{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 4rpx solid #fff;
+}
+.selectProduct view.gray{
+  border-bottom: 1px solid #e7e7e7;
+}
+.selectProduct view{
+  color: #8c8c8c;
+  display:flex;
+  flex:1;
+  justify-content:center;
+}
+.selectProduct view.active{
+  color: #333;
+  border-color: #0586cf;
+}
+.selectType view.active{
+  color: #0586cf;
+}
+.productLists{
+  border-top: 20rpx solid #f0f0f0;
+  padding: 20rpx 20rpx 0;
+}
+.productLists>view{
+  padding: 20rpx 0;
+}
+.productLists .blueBtn{
+  border-radius: 10rpx;
+  width: 90rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  font-size: 24rpx;
+  padding:0;
+  margin-right: 0;
+}
+.wrap .productLists>view>view{
+  flex: 3;
+}
+.wrap .productLists>view>view.b{
+  flex: 1;
+  justify-content: center;
+  padding:0;
+}
+
+.addProduct{
+  padding-bottom: 20rpx;
+  width: 100%;
+  height: 140rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+}
+.addProduct .f20{
+  padding: 20rpx 0 20rpx;
+  text-align: center
+}
+.addProduct navigator{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 340rpx;
+  margin: 0 auto;
+}

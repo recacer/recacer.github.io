@@ -1,0 +1,14 @@
+<view class='wrap'>
+  <view class='f28 p20 bgWhite'>
+    <view class='h90'>客户可在您的门店看到相应的开通服务</view>
+    <view class='group'>
+      <view wx:for='{{list}}' wx:key='*this'>
+        <image src='{{item.planImgUrl}}'></image>
+        <view>
+          <view>{{item.planServiceName}}</view>
+          <switch id='{{index}}' bindchange='change' checked='{{item.isOpenPlanService == "Y"}}'></switch>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

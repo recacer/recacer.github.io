@@ -1,0 +1,93 @@
+page{
+  background-color: #fff;
+}
+.wrap{
+  padding-bottom: 20rpx;
+}
+.wrap>image{
+  display: block;
+  width: 710rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+
+.sign{
+  padding-bottom: 20rpx;
+}
+.sign view{
+  display: inline-block;
+  position: relative;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 25rpx;
+  padding-right: 60rpx;
+  background-color: #e7e7e7;
+  margin: 20rpx 15rpx 0;
+  border-radius: 40rpx;
+}
+.sign image{
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.por{
+  position: relative;
+}
+.edit{
+  width: 150rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0!important;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.edit image{
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+  margin-left: 0;
+}
+.productLists>view{
+  padding: 40rpx 30rpx;
+  position: relative;
+}
+.productLists .edits{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 80rpx;
+  font-size: 22rpx;
+  background-color: #d3d3d3;
+  padding:0;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  margin-left: 0;
+}
+.client{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.client image{
+  width: 170rpx;
+  height: 60rpx;
+  margin-right: 0;
+}

@@ -1,0 +1,5 @@
+.wrap{
+  padding: 20rpx 20rpx 0;
+  border-top: 20rpx solid #f0f0f0;
+  background-color: #fff;
+}

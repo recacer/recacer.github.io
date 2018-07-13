@@ -1,0 +1,23 @@
+image{
+  width: 55rpx;
+  height: 55rpx;
+  margin: 0 30rpx 0 20rpx;
+}
+.group>view,.group view view{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.group>view>view{
+  flex: 1;
+  height: 100rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+.wx-switch-input,.wx-switch-input::before{
+  width:110rpx !important;
+  height: 55rpx !important;
+}
+.wx-switch-input::after{
+  width: 50rpx !important;
+  height: 50rpx !important;
+}

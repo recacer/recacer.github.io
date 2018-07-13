@@ -1,0 +1,19 @@
+<view class='wrap'>
+  <view class='serve'>
+
+    <view wx:for='{{list}}' wx:key='{{item.planServiceId}}' id='{{item.planServiceId}}' bindtap='toWebView'>
+      <image src='{{item.planBackdropUrl}}'></image>
+      <view>
+        <view class='f24' wx:if='{{item.planLink.length > 0}}'>
+          <swiper autoplay="true" circular="true" vertical="true" interval="3000">
+            <swiper-item wx:for='{{item.planLink}}' wx:key='{{index}}'>
+              <view>{{item}}</view>
+            </swiper-item>
+          </swiper>
+        </view>
+        <view class='{{mainColor}} f28'>了解详情>></view>
+      </view>
+    </view>
+
+  </view>
+</view>

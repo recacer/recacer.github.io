@@ -1,0 +1,98 @@
+<view class='homeNone' wx:if='{{!isOpenShop && info}}'>
+  <image src='/images/none.png'></image>
+  <view>如果你是理财师</view>
+  <view>想创建自己的门店</view>
+  <view>请点击确认创建</view>
+  <button bindtap='openShop'>确认创建我的门店</button>
+  <view>创建门店后，首页将展示自己的门店信息</view>
+</view>
+<view class='wrap' wx:if='{{info && isOpenShop}}'>
+  <image wx:if='{{info.isOpenShop != "Y"}}' src='/images/create_main.png' bindtap='main'></image>
+  
+  <block wx:if='{{info.userShopInfo.headImage}}'>
+    <view class='header' bindtap='main'>
+      <image src='/images/banner_{{mainColor}}.png'></image>
+        <view class='headImage'>
+          <image src='{{info.userShopInfo.headImage}}'></image>
+        </view>
+        <view class='headDetail'>
+          <view class='f36'>{{info.userShopInfo.userName}} <view class='f24'>{{info.userShopInfo.position}}</view></view>
+          <view class='msg'>
+              <view class='f24'>{{info.userShopInfo.companyName}}</view>
+            </view>
+          <view class='f24 motto'>{{info.userShopInfo.motto}}</view>
+        </view>
+    </view>
+    <view class='msgList f28'>
+      <view class='por'>
+        <view class='h80 f30'><image class='icon' src='/images/icon_good_blue.png'></image>擅长领域</view>
+        <view wx:if='{{info.listLabel.length > 0}}' class='sign'>
+            <view bindtap='delSign' wx:key='{{item}}' wx:for='{{info.listLabel}}' id='{{item}}'>{{item}}<image src='/images/icon_cancel.png'></image></view>
+        </view>
+        <view wx:else class='gray h80'>尚未填写</view>
+        <view class='edit' bindtap='set'>
+          <!-- <image src='/images/icon_edit.png'></image> -->
+          <view>编辑</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <image wx:else src='/images/create_set.png' bindtap='set'></image>
+  
+  <block wx:if='{{info.listShopPlan.length > 0}}'>
+    <view class='msgList f28'>
+      <view class='bt20 por'>
+        <view class='h80 f30'><image class='icon' src='/images/icon_service_blue.png'></image>我的服务</view>
+        <view class='serve'>
+
+          <view wx:for='{{info.listShopPlan}}' wx:key='{{item.planServiceName}}' id='{{item.planServiceId}}' bindtap='toWebView'>
+            <image src='{{item.planBackdropUrl}}'></image>
+            <view>
+              <view class='f24' wx:if='{{item.planLink.length > 0}}'>
+                <swiper autoplay="true" circular="true" vertical="true" interval="3000">
+                  <swiper-item wx:for='{{item.planLink}}' wx:key='{{index}}'>
+                    <view>{{item}}</view>
+                  </swiper-item>
+                </swiper>
+              </view>
+              <view class='blue f28'>了解详情>></view>
+            </view>
+          </view>
+
+        </view>
+        <view class='edit' bindtap='light'>
+          <!-- <image src='/images/icon_edit.png'></image> -->
+          <view>编辑</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <image wx:else src='/images/create_light.png' bindtap='light'></image>
+
+  <block wx:if='{{info.listProduct.length > 0}}' class='bt20'>
+    <view class='msgList f28 bt20 por'>
+      <view class='h80 f30'><image class='icon' src='/images/icon_product_blue.png'></image>我的产品</view>
+      <view class='productLists'>
+        
+        <view wx:for='{{info.listProduct}}' wx:key='{{item.productId}}'>
+          <image src='{{item.productCover}}'></image>
+          <view bindtap='toProductDetail' id='{{item.productId}}'>
+            <view class='f30 name'>{{item.productName}}</view>
+            <view class='f26 gray brief'>{{item.productBrief}}</view>
+          </view>
+          <view bindtap='edit' class='edits' id='{{item.productId}}' wx:if='{{item.isWarehouse == "Y"}}'>修改</view>
+        </view>
+
+      </view>
+      <view class='edit' bindtap='add'>
+          <!-- <image src='/images/icon_edit.png'></image> -->
+          <view>编辑</view>
+        </view>
+    </view>
+  </block>
+  <image wx:else src='/images/create_add.png' bindtap='add'></image>
+
+  <view class='client' bindtap='client' wx:if='{{info.listUserPlanAll.length > 0 || info.listUserPlanLink.length > 0}}'>
+    <image src='/images/client.png'></image>
+  </view>
+</view>

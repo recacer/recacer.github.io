@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/index",
+    "pages/tabBar/home",
+    "pages/tabBar/calendar",
+    "pages/tabBar/create",
+
+    "pages/view/web",
+    "pages/view/webShare",
+
+    "pages/home/peopleDetail",
+    "pages/home/product",
+    "pages/home/serve",
+
+    "pages/calendar/main",
+
+    "pages/create/main",
+    "pages/create/set",
+    "pages/create/light",
+    "pages/create/skill",
+    "pages/create/product",
+    "pages/create/productDetail",
+    "pages/create/addProduct",
+    "pages/create/add",
+    "pages/create/client"
+
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#999",
+    "selectedColor":"#0084ff",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home",
+        "text": "首页",
+        "iconPath":"images/tab_home.png",
+        "selectedIconPath":"images/tab_homes.png"
+      },
+      {
+        "pagePath": "pages/tabBar/calendar",
+        "text": "日历",
+        "iconPath": "images/tab_calendar.png",
+        "selectedIconPath": "images/tab_calendars.png"
+      },
+      {
+        "pagePath": "pages/tabBar/create",
+        "text": "我的",
+        "iconPath": "images/tab_edit.png",
+        "selectedIconPath": "images/tab_edits.png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0586cf",
+    "navigationBarTitleText": "财富超级店",
+    "navigationBarTextStyle":"white"
+  }
+}

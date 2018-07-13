@@ -1,0 +1,44 @@
+page{
+  background-color: #fff;
+}
+.selectStyle{
+  display:flex;
+  padding-top: 25rpx;
+}
+.selectStyle>view{
+  width: 50%;
+  text-align: center;
+  position: relative;
+}
+.img{
+  display:block;
+  width: 252rpx;
+  height: 450rpx;
+  margin: 0 auto;
+}
+.select{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right:70rpx;
+  top:400rpx;
+}
+
+input{
+  width: 690rpx;
+  height: 80rpx;
+  background-color: #e7e7e7;
+  margin: 10rpx auto;
+  padding-left: 20rpx;
+}
+.f36{
+  padding-top: 30rpx;
+  font-weight: bold;
+}
+.blueBtn{
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 140rpx auto 0;
+}

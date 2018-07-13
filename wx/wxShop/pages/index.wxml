@@ -1,0 +1,5 @@
+
+<view wx:if="{{msgShow}}">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <button bindtap='out'> 退出 </button>
+</view>

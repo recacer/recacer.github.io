@@ -1,0 +1,80 @@
+<view class='homeNone' wx:if='{{info.isOpenShop == "N"}}'>
+  <image src='/images/none.png'></image>
+  <view>如果你是理财师</view>
+  <view>想创建自己的门店</view>
+  <view>请点击确认创建</view>
+  <button bindtap='create'>确认创建我的门店</button>
+  <view>创建门店后，首页将展示自己的门店信息</view>
+</view>
+<view class='wrap' wx:else>
+  <view class='msgList f24' wx:if='{{info}}'>
+    <view wx:if='{{!info.userShopInfo.headImage}}' class='bottomBor'>
+      <view class='{{mainColor}} h80'>个人资料</view>
+      <view class='gray h80'>尚未填写</view>
+    </view>
+    <block wx:else>
+      <view class='header'>
+        <image src='/images/banner_{{mainColor}}.png'></image>
+          <view class='headImage'>
+            <image src='{{info.userShopInfo.headImage}}'></image>
+          </view>
+          <view class='headDetail'>
+            <view class='f36'>{{info.userShopInfo.userName}} <view class='f24'>{{info.userShopInfo.position}}</view></view>
+            <view class='msg'>
+                <view class='f24'>{{info.userShopInfo.companyName}}</view>
+              </view>
+            <view class='f24 motto'>{{info.userShopInfo.motto}}</view>
+          </view>
+      </view>
+      <view class='bottomBor'>
+        <view class='h80 f30'><image class='icon' src='/images/icon_good_{{mainColor}}.png'></image>擅长领域</view>
+        <view wx:if='{{info.listLabel.length > 0}}' class='sign {{mainColor}}'>
+          <view wx:key='{{item}}' wx:for='{{info.listLabel}}' wx:if='{{index < 3}}'>{{item}}</view>
+        </view>
+        <view wx:if='{{info.listLabel.length < 1}}' class='gray h80'>尚未填写</view>
+        <navigator class='{{mainColor}} f28' wx:if='{{info.listLabel.length > 0}}' open-type='navigate' url='/pages/home/peopleDetail'>了解理财师<image class='icon_small' src='/images/icon_more_{{mainColor}}.png'></image></navigator>
+      </view>
+    </block>
+    
+    <view wx:if='{{info.listShopPlan.length > 0}}'>
+      <view class='h80 f30'><image class='icon' src='/images/icon_service_{{mainColor}}.png'></image>我的服务</view>
+      <view wx:if='{{info.listShopPlan.length > 0}}' class='serve'>
+        <view id='{{item.planServiceId}}' wx:for='{{info.listShopPlan}}' wx:key='{{item.planServiceName}}' wx:if='{{index<3}}' bindtap='toWebView'>
+          <image src='{{item.planBackdropUrl}}'></image>
+          <view>
+            <view class='f24' wx:if='{{item.planLink.length > 0}}'>
+              <swiper autoplay="true" circular="true" vertical="true" interval="3000">
+                <swiper-item wx:for='{{item.planLink}}' wx:key='{{index}}'>
+                  <view>{{item}}</view>
+                </swiper-item>
+              </swiper>
+            </view>
+            <view class='{{mainColor}} f28'>了解详情>></view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:else class='gray h80'>尚未填写</view>
+      <navigator class='{{mainColor}} f28' wx:if='{{info.listShopPlan.length > 0}}' open-type='navigate' url='/pages/home/serve'>查看更多服务<image class='icon_small' src='/images/icon_more_{{mainColor}}.png'></image></navigator>
+      <view class='bottomLine'></view>
+    </view>
+
+    <view wx:if='{{info.listProduct.length > 0}}' class='bt20'>
+      <view class='h80 f30'><image class='icon' src='/images/icon_product_{{mainColor}}.png'></image>我的产品</view>
+      <view class='productLists'>
+
+        <view wx:for='{{info.listProduct}}' wx:key='{{item.productId}}' wx:if='{{index<3}}'>
+          <image src='{{item.productCover}}'></image>
+          <view bindtap='toProductDetail' id='{{item.productId}}'>
+            <view class='f30 name'>{{item.productName}}</view>
+            <view class='f26 gray brief'>{{item.productBrief}}</view>
+          </view>
+        </view>
+
+      </view>
+      <!-- <view class='gray h80'>尚未填写</view> -->
+      <navigator class='{{mainColor}} f28' open-type='navigate' url='/pages/home/product'>查看更多产品<image class='icon_small' src='/images/icon_more_{{mainColor}}.png'></image></navigator>
+      <view class='bottomLine'></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+.blueBtn{
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 130rpx auto 0;
+}
+.inputs view{
+  display:flex;
+}
+.p35{
+  padding: 35rpx 0;
+}
+.inputs{
+  background-color: #fff;
+}
+.inputs image{
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+}
+.inputs>view{
+  align-items: center;
+  justify-content:space-between;
+  border-bottom: 1px solid #e7e7e7;
+  min-height: 80rpx;
+}
+.other>view{
+  border-top: 20rpx solid #f0f0f0;
+  background-color: #fff;
+  padding: 0 20rpx 20rpx;
+}
+.add{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+  padding-top: 5rpx;
+}
+textarea{
+  width: 670rpx;
+  height: 140rpx;
+  padding: 10rpx 20rpx;
+  background-color: #e7e7e7;
+  border-radius: 10rpx;
+}
+.sign{
+  padding-bottom: 20rpx;
+}
+.sign view{
+  display: inline-block;
+  position: relative;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 25rpx;
+  padding-right: 60rpx;
+  background-color: #e7e7e7;
+  margin: 20rpx 15rpx 0;
+  border-radius: 40rpx;
+}
+.sign image{
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+input{
+  text-align: right;
+}

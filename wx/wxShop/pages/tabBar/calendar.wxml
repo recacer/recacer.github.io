@@ -1,0 +1,24 @@
+<view class='wrap {{mainColor}}'>        
+  <view class='calendarBor' wx:if='{{info}}'>
+    <image class='bg' src='/images/calendar_{{mainColor}}.png'></image>
+    <view class='dateNum f24'>{{info.dataSolarStr}} {{info.weekStr}}</view>
+    <view class='date f24'>{{info.dataLunarStr}} 【{{info.dayStr}}年】</view>
+    <view class='num {{mainColor}}'>{{num}}</view>
+    <view class='tips'>{{tips}}</view>
+    <view wx:if='{{info.userName}}' class='userName f30'>{{info.userName}}</view>
+    <view wx:if='{{info.companyName}}' class='companyName f24'>{{info.companyName}}</view>
+    <view wx:if='{{info.position}}' class='position f24'>{{info.position}}</view>
+    <!-- <view wx:if='{{info.wxQrCode}}' class='gray f20'>扫码进入门店</view> -->
+    <image wx:if='{{info.wxQrCode}}' class='qrcode' src='{{info.wxQrCode}}'></image>
+  </view>
+  <view wx:else class='calendarBor'></view>
+  <image wx:if='{{hasShop}}' class='edit' bindtap='edit' src='/images/icon_calendar_edit.png'></image>
+  <image wx:if='{{hasShop}}' class='share' bindtap='nextPage' src='/images/icon_calendar_share_{{mainColor}}.png'></image>
+  <view class='textBor' bindtap='edit' wx:if='{{isEdit}}'>
+    <view class='text' catchtap>
+      <textarea fixed='true' cursor-spacing='50' maxlength='60' bindinput='changeInput' value='{{textareaVal}}' show-confirm-bar='' auto-focus='true'></textarea>
+      <button class='{{mainColor}}Btn' bindtap='save'>保存</button>
+    </view>
+  </view>
+  
+</view>

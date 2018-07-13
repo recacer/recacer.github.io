@@ -1,0 +1,28 @@
+<view class="wrap">
+  <view class='msgList f28'>
+    <view class='bottomBor'>
+      <view class='{{mainColor}} h80'>擅长领域</view>
+      <view wx:if='{{info.listLabel.length > 0}}' class='sign {{mainColor}}'>
+        <view wx:key='{{item}}' wx:for='{{info.listLabel}}'>{{item}}</view>
+      </view>
+      <view wx:else class='gray h80'>尚未填写</view>
+    </view>
+    <view wx:if='{{isMine || career}}'>
+      <view class='{{mainColor}} h80'>职业背景</view>
+      <textarea wx:if='{{career}}' value='{{career}}' auto-height='true' disabled='true'></textarea>
+      <view wx:else class='gray h80'>尚未填写</view>
+      <view class='bottomLine'></view>
+    </view>
+    <view wx:if='{{isMine || education}}'>
+      <view class='{{mainColor}} h80'>教育及培训背景</view>
+      <textarea wx:if='{{education}}' value='{{education}}' auto-height='true' disabled='true'></textarea>
+      <view wx:else class='gray h80'>尚未填写</view>
+      <view class='bottomLine'></view>
+    </view>
+    <view wx:if='{{isMine || honor}}'>
+      <view class='{{mainColor}} h80'>所获荣誉</view>
+      <textarea wx:if='{{honor}}' value='{{honor}}' auto-height='true' disabled='true'></textarea>
+      <view wx:else class='gray h80'>尚未填写</view>
+    </view>
+  </view>
+</view>

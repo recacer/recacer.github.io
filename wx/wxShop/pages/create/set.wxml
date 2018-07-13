@@ -1,0 +1,68 @@
+<view class='wrap'>
+  <view class='f28'>
+    <view class='inputs p20'>
+      <view>
+        <view>形象照</view>
+        <view class='p35'>
+          <image bindtap='chooseImg' src='{{headImage || img}}'></image>
+        </view>
+      </view>
+      <view>
+        <view>姓名</view>
+        <view>
+          <input id='userName' value='{{userName}}' bindinput='changeInput' placeholder='请输入您的姓名'></input>
+        </view>
+      </view>
+      <view>
+        <view>公司</view>
+        <view>
+          <input id='companyName' value='{{companyName}}' bindinput='changeInput' placeholder='请输入您的公司'></input>
+        </view>
+      </view>
+      <view>
+        <view>职位</view>
+        <view>
+          <input id='position' value='{{position}}' bindinput='changeInput' placeholder='请输入您的职位'></input>
+        </view>
+      </view>
+      <view>
+        <view>联系方式</view>
+        <view>
+          <input type='number' id='userPhone' value='{{userPhone}}' bindinput='changeInput' placeholder='请输入您的联系方式'></input>
+        </view>
+      </view>
+      <view style='border:0'>
+        <view>座右铭</view>
+        <view>
+          <input id='motto' value='{{motto}}' bindinput='changeInput' placeholder='请输入您的座右铭'></input>
+        </view>
+      </view>
+    </view>
+    <view class='other'>
+    
+      <view>
+        <view class='h80'>擅长领域</view>
+        <view class='sign'>
+          <view bindtap='delSign' wx:if='{{index < 3}}' wx:key='{{item}}' wx:for='{{listLabel}}' id='{{item}}'>{{item}}<image src='/images/icon_cancel.png'></image></view>
+        </view>
+        <view bindtap='navSkill'>
+          <image class='add' src='/images/icon_add.png'></image>
+        </view>
+      </view>
+
+      <view>
+        <view class='h80'>职业背景（选填）</view>
+        <textarea id='career' value='{{career}}' bindinput='changeInput'></textarea>
+      </view>
+      <view>
+        <view class='h80'>教育与培训（选填）</view>
+        <textarea id='education' value='{{education}}' bindinput='changeInput'></textarea>
+      </view>
+      <view>
+        <view class='h80'>所获荣誉（选填）</view>
+        <textarea id='honor' value='{{honor}}' bindinput='changeInput'></textarea>
+      </view>
+    </view>
+    <button class='blueBtn' bindtap='save'>保存</button>
+  </view>
+</view>

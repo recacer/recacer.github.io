@@ -1,0 +1,23 @@
+<view class='wrap'>
+  <view class='title'>{{info.productName}}</view>
+  <view class='subTitle'>
+    <view class='f28' wx:for='{{list}}' wx:key='*this'>{{item}}</view>
+  </view>
+  <image class='detail' src='{{info.productDetailsUrl}}' mode='widthFix'></image>
+</view>
+<view class="mask" wx:if='{{isShow}}'>
+  <view class="sendMsg">
+    <view class='cancel' bindtap='hide'>关闭</view>
+    <view class='f24'>
+      <view>留下您的联系方式</view>
+      <view>方便理财顾问为您服务</view>
+    </view>
+    <input id='name' bindinput='inputValue' type="text" placeholder="您的称呼"/>
+    <input id='phone' bindinput='inputValue' type='number' placeholder="您的手机号码"/>
+    <view wx:if='{{sharePhone}}' bindtap='call' id='{{sharePhone}}' class="f20">您也可以直接联系顾问：{{sharePhone}}</view>
+    <view wx:else class="f20"> </view>
+    <view class="blueBtn" bindtap='submit'>确认</view>
+    <view class="tips">提示：该数据仅用于本次规划，不作其他用途</view>
+  </view>
+</view>
+<view class='yellowBtn' bindtap='show'>马上咨询</view>

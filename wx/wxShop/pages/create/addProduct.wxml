@@ -1,0 +1,44 @@
+<view class='wrap'>
+  <view class='middle f28'>
+    <view class='bottomBor'>
+      
+      <view class='bottomLine h80'>
+        <view>产品名称</view>
+        <view class='w50'>
+          <input bindinput='changeInput' id='productName' value='{{productName}}' type='text' placeholder='请输入产品名称'></input>
+        </view>
+      </view>
+
+      <view class='upload'>
+        <view>
+          <text>产品封面</text>
+          <text class='gray'>（200*100px，500k以下）</text>
+        </view>
+        <view>
+          <image bindtap='coverClick' src='{{productCover || "/images/upload.png"}}'></image>
+        </view>
+      </view>
+
+    </view>
+
+    <view>
+      <view class='p20'>
+        <view class='h80'>产品简介</view>
+        <textarea bindinput='changeInput' id='productBrief' value='{{productBrief}}' placeholder='请输入产品简介'></textarea>
+        <view class='bottomLine'></view>
+      </view>
+      <view class='p20'>
+        <view class='h80'>产品详情</view>
+        <image bindtap='detailClick' wx:if='{{productDetailsUrl}}' src='{{productDetailsUrl}}' class='uploadBig' mode='widthFix'></image>
+        <view bindtap='detailClick' wx:else class='uploadBigImg'>
+          <image src='/images/icon_plus.png' mode='widthFix'></image>
+          <view>上传产品详情图片</view>
+          <view>图片宽度建议为750px，大小在2M以下</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <button class='blueBtn' bindtap='add'>{{productId ? '修改' : '添加'}}</button>
+  </view>
+</view>

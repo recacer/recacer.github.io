@@ -1,0 +1,13 @@
+page{
+  background-color: #fff;
+}
+.wrap{
+  padding: 20rpx;
+}
+navigator{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 20rpx;
+}

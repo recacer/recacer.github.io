@@ -1,0 +1,30 @@
+<view class='wrap f30'>
+  <view class='clientTitle'>
+    <view bindtap='select' id='select1' class='{{selectReport == "select1" && "active"}}'>我的客户</view>
+    <view bindtap='select' id='select2' class='{{selectReport == "select2" && "active"}}'>客户报告</view>
+  </view>
+
+  <view class='clientList' wx:if='{{selectReport == "select1" && info.listUserPlanLink.length > 0}}'>
+    <view>
+      <view class='t'>客户称呼</view>
+      <view class='t'>联系方式</view>
+      <view class='t'>咨询服务类型</view>
+    </view>
+    <view wx:for='{{info.listUserPlanLink}}' wx:key='{{item.createDate}}'>
+      <view class='gray'>{{item.name}}</view>
+      <view class='gray'>{{item.phone}}</view>
+      <view class='gray'>{{item.planType}}</view>
+    </view>
+  </view>
+
+  <view class='clientReport' wx:if='{{selectReport == "select2" && info.listUserPlanAll.length > 0}}'>
+    <view>
+      <view class='t'>客户称呼</view>
+      <view class='t'>客户报告类型</view>
+    </view>
+    <view bindtap='toWebShare' data-item='{{item}}' wx:for='{{info.listUserPlanAll}}' wx:key='{{item.planId}}'>
+      <view class='gray'>{{item.cName}}</view>
+      <view class='b'>{{item.planType}}</view>
+    </view>
+  </view>
+</view>

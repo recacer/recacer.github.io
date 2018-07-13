@@ -1,0 +1,10 @@
+<view class='wrap f28'>
+  <view class='middle'>
+    <view class='h80'>请输入你擅长的领域</view>
+    <input confirm-type='done' confirm-hold='true' value='{{skill}}' bindconfirm='addSkill' placeholder='请输入你擅长的领域' auto-focus='true'></input>
+    <view class='sign'>
+      <view id='{{item}}' bindtap='selectFun' class='{{item[1]}}' wx:key='{{item[1]}}' wx:for='{{listLabel}}'>{{item[0]}}<image src='/images/icon_cancel.png'></image></view>
+    </view>
+  </view>
+  <button class='blueBtn' bindtap='save'>保存</button>
+</view>

@@ -1,0 +1,94 @@
+page{
+  background-color: #fff;
+}
+.wrap{
+  padding: 0 20rpx 100rpx;
+}
+.title{
+  font-size: 36rpx;
+  padding: 60rpx 0 40rpx;
+  text-align: center;
+}
+.yellowBtn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #ffb400;
+  color: #fff;
+  font-size: 34rpx;
+  z-index: 1;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  z-index: 2;
+}
+.sendMsg{
+  width: 500rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: relative;
+}
+.cancel{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15rpx 25rpx;
+  font-size: 20rpx;
+}
+.mask .f24{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120rpx;
+  flex-direction: column;
+}
+.mask .f24 view{
+  line-height: 1.5
+}
+.tips{
+  font-size: 16rpx;
+  padding-top: 10rpx;
+}
+.mask .blueBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 230rpx;
+  height: 60rpx;
+}
+.mask input{
+  display: block;
+  width: 440rpx;
+  height: 70rpx;
+  padding-left: 20rpx;
+  font-size: 20rpx; 
+  text-align: left;
+  background-color: #e7e7e7;
+  margin: 0 auto 20rpx;
+}
+.mask .f20{
+  padding: 20rpx 0;
+}
+.subTitle{
+  width: 710rpx;
+  padding-bottom: 40rpx;
+  margin: 0 auto;
+}
+.detail{
+  width: 710rpx;
+}

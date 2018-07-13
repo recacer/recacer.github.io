@@ -1,0 +1,39 @@
+.sign{
+  padding-bottom: 20rpx;
+}
+.sign.blue view{
+  background-color: #0586cf;
+}
+.sign.red view{
+  background-color: #dc3250;
+}
+.sign view{
+  display:inline-block;
+  position:relative;
+  height:50rpx;
+  line-height:50rpx;
+  padding: 0 30rpx;
+  margin:20rpx 15rpx 0;
+  border-radius:50rpx;
+  color: #fff;
+}
+navigator{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+navigator.blue,navigator.red{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.icon_small{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}

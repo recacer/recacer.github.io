@@ -1,0 +1,82 @@
+.productNone{
+  padding-top: 130rpx;
+  padding-bottom: 20rpx;
+}
+.productNone image{
+  display: block;
+  width: 280rpx;
+  height: 324rpx;
+  margin: 0 auto;
+}
+.productNone .gray{
+  padding: 30rpx 0 110rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+.blueBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240rpx;
+  margin: 0 auto;
+}
+.productList{
+  background-color: #fff;
+  padding: 0 20rpx;
+}
+.productList image{
+  display: block;
+  width: 200rpx;
+  height: 110rpx;
+}
+.productList>view{
+  flex-direction: column;
+  padding: 40rpx 0 30rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+.productList .prod{
+  display: flex;
+  flex: 1;
+  padding-left: 30rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.productList>view>view{
+  display: flex;
+}
+.edit{
+  width: 710rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  background-color: #e7e7e7;
+  margin-top: 30rpx;
+}
+.edit view{
+  display: flex;
+  flex: 1;
+  border-right: 1px solid #8d8d8d;
+  align-items: center;
+  justify-content: center;
+}
+.edit view.noneBor{
+  border:0;
+}
+.edit image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.wrap{
+  padding-bottom: 140rpx;
+}
+.bottom{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

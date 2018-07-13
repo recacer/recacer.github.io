@@ -1,0 +1,13 @@
+<view class='wrap'>
+  <view class='productLists'>
+    
+    <view wx:for='{{list}}' wx:key='{{item.productId}}'>
+      <image src='{{item.productCover}}'></image>
+      <view bindtap='toProductDetail' id='{{item.productId}}'>
+        <view class='f30 name'>{{item.productName}}</view>
+        <view class='f26 gray brief'>{{item.productBrief}}</view>
+      </view>
+    </view>
+
+  </view>
+</view>

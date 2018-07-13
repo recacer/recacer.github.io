@@ -1,0 +1,136 @@
+.wrap {
+  padding-top: 20rpx;
+  padding-bottom: 0;
+  position: relative;
+  height: 100vh;
+}
+.wrap.blue{
+  background-color: #0586cf;
+}
+.wrap.red{
+  background-color: #dc3250;
+}
+.yellowBtn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #ffb400;
+  font-size: 30rpx;
+  color: #fff!important;
+}
+canvas{
+  display: block;
+  width: 640rpx;
+  height: 985rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+}
+.calendarBor {
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  right: 0;
+  width: 640rpx;
+  height: 985rpx;
+  margin: auto;
+  background-color: #fff;
+}
+
+.bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap>image {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  right: 20rpx;
+}
+
+.edit {
+  top: 710rpx;
+}
+
+.share {
+  top: 830rpx;
+}
+
+.dateNum, .date, .num, .tips {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 1;
+}
+
+.dateNum {
+  top: 110rpx;
+}
+
+.date {
+  top: 150rpx;
+}
+
+.num {
+  font-size: 380rpx;
+  top: 180rpx;
+}
+
+view.tips{
+  top: 610rpx;
+  width: 520rpx;
+  font-size: 26rpx;
+  line-height: 1.4;
+}
+
+.qrcode{
+  position: absolute;
+  top: 777rpx;
+  left: 180rpx;
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.gray{
+  position: absolute;
+  top: 890rpx;
+  left: 180rpx;
+}
+
+.userName{
+  position: absolute;
+  top: 777rpx;
+  left: 351rpx;
+}
+
+.companyName{
+  position: absolute;
+  top: 820rpx;
+  left: 351rpx;
+  width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+
+.position{
+  position: absolute;
+  top: 860rpx;
+  left: 351rpx;
+  width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}

@@ -1,0 +1,4 @@
+<view class='wrap {{mainColor}}'>
+  <canvas bindlongtap='longtap' canvas-id="canvas"></canvas>
+  <view class='yellowBtn'>长按图片保存相册后发朋友圈</view>
+</view>

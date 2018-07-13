@@ -1,0 +1,32 @@
+<view class='wrap'>
+  <view class='productNone' wx:if='{{list && list.length < 1}}'>
+    <image src='/images/none_product.png'></image>
+    <view class='gray'>暂无添加产品，请添加</view>
+    <navigator class='blueBtn' open-type='navigate' url='/pages/create/product'>添加产品</navigator>
+  </view>
+  
+  <view class='productList' wx:if='{{list && list.length > 0}}'>
+
+    <view wx:for='{{list}}' wx:key='item.productId'>
+      <view>
+        <image src='{{item.productCover}}'></image>
+        <view class='prod' bindtap='toProductDetail' id='{{item.productId}}'>
+          <view class='f30 name'>{{item.productName}}</view>
+          <view class='f26 gray brief'>{{item.productBrief}}</view>
+        </view>
+      </view>
+      <view class='edit f28'>
+        <view bindtap='click' id='{{"1,"+item.productId+","+item.sort}}'><image src='/images/icon_up.png'></image>上移</view>
+        <view bindtap='click' id='{{"2,"+item.productId+","+item.sort}}'><image src='/images/icon_down.png'></image>下移</view>
+        <view wx:if='{{item.isWarehouse == "Y"}}' bindtap='click' id='{{"3,"+item.productId+","+item.sort}}'><image src='/images/icon_edit.png'></image>编辑</view>
+        <view bindtap='click' id='{{"4,"+item.productId+","+item.sort}}' class='noneBor'><image src='/images/icon_del.png'></image>删除</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='bottom' wx:if='{{list && list.length > 0}}'>
+    <navigator class='blueBtn' open-type='navigate' url='/pages/create/product'>添加产品</navigator>
+  </view>
+
+</view>

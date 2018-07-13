@@ -1,0 +1,48 @@
+.middle{
+  padding: 0 20rpx 20rpx;
+  border-top: 20rpx solid #f0f0f0;
+  background-color: #fff;
+}
+input{
+  width: 670rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+  background-color: #e7e7e7;
+  border-radius: 10rpx;
+  display: block;
+  margin: 0 auto;
+}
+.sign{
+  padding: 20rpx 0;
+}
+.sign view{
+  display: inline-block;
+  position: relative;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  margin: 20rpx 15rpx 0;
+  border-radius: 40rpx;
+  border: 1px solid #e7e7e7;
+  background-color: #fff;
+}
+.sign image{
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+  display: none;
+}
+.sign view.active{
+  padding-right: 60rpx;
+  background-color: #e7e7e7;
+}
+.sign view.active image{
+  display: block;
+}
+.blueBtn{
+  width: 240rpx;
+  margin-top: 200rpx;
+}

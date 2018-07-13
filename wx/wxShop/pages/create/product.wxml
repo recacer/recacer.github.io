@@ -1,0 +1,30 @@
+<view class='wrap'>
+  <view class='middle'>
+
+    <view class='selectProduct f30'>
+      <view bindtap='selectParent' data-product='{{item}}' wx:for='{{classify}}' wx:key='{{item.classifyId}}' class='{{item.classifyId == parentId ? "active" : "" + selectChildren.length > 0 ? " gray" : ""}}'>{{item.classifyName}}</view>
+    </view>
+    <view class='selectType f28' wx:if='{{selectChildren.length > 0}}'>
+      <view bindtap='selectChild' id='{{item.classifyId}}' wx:for='{{selectChildren}}' wx:key='{{item.classifyId}}' class='{{item.classifyId == childId ? "active" : ""}}'>{{item.classifyName}}</view>
+    </view>
+
+    <view class='productLists' wx:if='{{list.length > 0}}'>
+
+      <view wx:for='{{list}}' wx:key='{{item.productId}}'>
+        <image src='{{item.productCover}}'></image>
+        <view bindtap='toDetail' id='{{item.productId}}'>
+          <view class='f30 name'>{{item.productName}}</view>
+          <view class='f26 gray brief'>{{item.productBrief}}</view>
+        </view>
+        <view class='b' id='{{item.productId}}' bindtap='add' wx:if='{{item.isAddProduct == "N"}}'>
+          <button class='blueBtn'>添加</button>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='addProduct'>
+    <view class='f20'>没有找到您要的产品？</view>
+    <navigator class='blueBtn' open-type='navigate' url='/pages/create/addProduct'>点击自定义添加产品</navigator>
+  </view>
+</view>
