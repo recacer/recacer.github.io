@@ -9,8 +9,11 @@ new repository => Repository name (输入项目名称,如:recacer.github.io) => 
 #### 基本操作:
 1. X: 
 2. cd x:\xx\xxx\xxx 
-3. X指的是d/e/f盘
+```
+X指的是d/e/f盘,如果在c盘直接执行第二步
+```
 
+部署到https://recacer.github.io/
 * git add .
 * git commit -m "注释"
 * git push
