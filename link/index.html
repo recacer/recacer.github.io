@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>别人的球</title>
+<link rel="stylesheet" type="text/css" href="css/zzsc-demo.css">
+<style type="text/css">
+	#tag-cloud{
+		width:640px;
+		height:480px;
+		margin: 50px auto;
+	}
+	a{
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+<div class="zzsc-container">
+	<div id='tag-cloud'></div>
+</div>
+
+<script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="../js/jquery.svg3dtagcloud.min.js"></script>
+<script>
+	$( document ).ready( function() {
+		var entries = [
+			{ label: '酒展', url: 'http://www.wineguide123.com', target: '_top' },
+			{ label: 'pdf的综合理财规划', url: 'http://app.xiaoshutou.com/aylcs/generalReport/pdf2.html', target: '_top' },
+			{ label: '16区官网', url: 'http://www.16area.com', target: '_top' },
+			{ label: '安盈官网', url: 'http://www.myiwin.com', target: '_top' },
+			{ label: '国际认证独立理财师协会官网', url: 'http://www.ifaclub.org', target: '_top' },
+			{ label: '邀请函', url: 'https://recacer.github.io/invitation/', target: '_top' },
+			{ label: '抽奖', url: 'https://recacer.github.io/lottery/', target: '_top' },
+			{ label: '小程序 - 财富超级店', url: '#', target: '_top' },
+		];
+
+		var settings = {
+
+			entries: entries,
+			width: 640,
+			height: 480,
+			radius: '65%',
+			radiusMin: 75,
+			bgDraw: true,
+			bgColor: '#494A5F',
+			opacityOver: 1.00,
+			opacityOut: 0.05,
+			opacitySpeed: 6,
+			fov: 800,
+			speed: 0.5,
+			fontFamily: 'Oswald, Arial, sans-serif',
+			fontSize: '15',
+			fontColor: '#fff',
+			fontWeight: 'normal',//bold
+			fontStyle: 'normal',//italic
+			fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+			fontToUpperCase: true
+
+		};
+
+		//var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+		$( '#tag-cloud' ).svg3DTagCloud( settings );
+
+	} );
+
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
+</html>
