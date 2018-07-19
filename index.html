@@ -55,12 +55,12 @@
             }else if(t.getHours() < 18){
                 t.setTime(t.getTime() + 1800000)
                 h = 18 - t.getHours()
-                m = (t.getMinutes() < 30 ? 30 - t.getMinutes() : 60 - t.getMinutes()) + 30
+                m = t.getMinutes() < 30 ? 30 - t.getMinutes() : 60 - t.getMinutes()
                 s = 60 - t.getSeconds()
             }else{
                 h = 0;
-                m = 0;
-                s = 0;
+                m = '00';
+                s = '00';
             }
             h = h + (eT.getDate() - t.getDate())*8
             if(s == 60){
@@ -71,7 +71,7 @@
                 m = '00'
                 h += 1
             }
-            if(h < 10){
+            if(h < 10 && h != '00'){
                 h = '0' + h
             }
             if(m < 10 && m != '00'){
