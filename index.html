@@ -54,7 +54,7 @@
                 s = '00';
             }else if(t.getHours() < 18){
                 t.setTime(t.getTime() + 1800000)
-                h = 17 - t.getHours()
+                h = 18 - t.getHours() + (t.getMinutes() > 30 ? 1 : 0)
                 m = t.getMinutes() < 30 ? 30 - t.getMinutes() : 90 - t.getMinutes()
                 s = 60 - t.getSeconds()
             }else{
