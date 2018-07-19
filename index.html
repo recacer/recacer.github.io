@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-<meta charset="UTF-8">
-<title>Recacer</title>
-<style media="screen">
-html{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-h1{
-    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-    -webkit-animation: hue 60s infinite linear;
-}
-@-webkit-keyframes hue {
-    from {
-      -webkit-filter: hue-rotate(0deg);
-    }
-    to {
-      -webkit-filter: hue-rotate(-360deg);
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Recacer</title>
+    <style media="screen">
+        html{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color:transparent;
+            -webkit-animation: hue 60s infinite linear;
+        }
+        @-webkit-keyframes hue {
+            from {
+                -webkit-filter: hue-rotate(0deg);
+            }
+            to {
+                -webkit-filter: hue-rotate(-360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-<h1 onclick="window.location.href = 'link/'">这只是一个很普通的首页</h1>
+<h1 id='txt' onclick="window.location.href = 'link/'"></h1>
+<script>
+    let txt
+    txt = document.getElementById('txt')
+    let t
+    let eT = new Date(2018,7,20)
+    t = new Date()
+    if(eT.getTime() > t.getTime()){
+        setInterval(function(){
+            t = new Date()
+            let h
+            let m
+            let s
+            let ss
+            if(t.getHours < 8){
+                h = 8
+            }else if(t.getHours() < 12){
+                t.setTime(t.getTime() + 1800000)
+                h = 16 - t.getHours()
+                m = (t.getMinutes() < 30 ? 30 - t.getMinutes() : 60 - t.getMinutes()) + 30
+                s = 60 - t.getSeconds()
+            }else if(t.getHours() == 12){
+                h = 4;
+                m = 30;
+                s = 0;
+            }else if(t.getHours() < 18){
+                t.setTime(t.getTime() + 1800000)
+                h = 18 - t.getHours()
+                m = (t.getMinutes() < 30 ? 30 - t.getMinutes() : 60 - t.getMinutes()) + 30
+                s = 60 - t.getSeconds()
+            }else{
+                h = 0;
+                m = 0;
+                s = 0;
+            }
+            h = h + (eT.getDate() - t.getDate())*8
+            if(h < 10){
+                h = '0' + h
+            }
+            if(m < 10){
+                m = '0' + m
+            }
+            if(s < 10){
+                s = '0' + s
+            }
+            ss =(1000 - (t.getTime() + '').substring((t.getTime() + '').length - 3,99))
+            while((ss + '').length < 3){
+                ss = '0' + ss
+            }
+            if(ss == 1000){
+                ss = '000'
+            }
+            txt.innerText = h + '：' + m + '：' + s + '：' + ss
+        },1000/60)
+    }
+</script>
 </body>
 </html>
