@@ -63,6 +63,14 @@
                 s = 0;
             }
             h = h + (eT.getDate() - t.getDate())*8
+            if(s == 60){
+                s = 59
+                m += 1
+            }
+            if(m >= 60){
+                m = 59
+                h += 1
+            }
             if(h < 10){
                 h = '0' + h
             }
@@ -71,14 +79,6 @@
             }
             if(s < 10){
                 s = '0' + s
-            }
-            if(s == 60){
-                s = 59
-                m += 1
-            }
-            if(m >= 60){
-                m = 59
-                h += 1
             }
             ss =(1000 - (t.getTime() + '').substring((t.getTime() + '').length - 3,99))
             while((ss + '').length < 3){
