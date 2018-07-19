@@ -45,7 +45,7 @@
                 h = 8
             }else if(t.getHours() < 12){
                 t.setTime(t.getTime() + 1800000)
-                h = 16 - t.getHours()
+                h = 16 - t.getHours() + (t.getMinutes() > 30 ? 1 : 0)
                 m = (t.getMinutes() < 30 ? 30 - t.getMinutes() : 60 - t.getMinutes()) + 30
                 s = 60 - t.getSeconds()
             }else if(t.getHours() == 12){
