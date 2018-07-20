@@ -27,55 +27,7 @@
     </style>
 </head>
 <body>
-<h1 id='txt' onclick="window.location.href = 'link/'"></h1>
-<script>
-    let txt
-    txt = document.getElementById('txt')
-    let t
-    let eT = new Date(2018,7,20)
-    t = new Date()
-    if(eT.getTime() > t.getTime()){
-        setInterval(function(){
-            t = new Date()
-            let h
-            let m
-            let s
-            let ss
-            if(t.getHours < 9){
-                h = 8
-            }else if(t.getHours() == 12){
-                h = 5;
-                m = '00';
-                s = '00';
-            }else if(t.getHours() < 18){
-                h = 17 - t.getHours()
-                m = 59 - t.getMinutes()
-                s = 59 - t.getSeconds()
-            }else{
-                h = 0;
-                m = '00';
-                s = '00';
-            }
-            h = h + (eT.getDate() - t.getDate())*8
-            if(h < 10 && h != '00'){
-                h = '0' + h
-            }
-            if(m < 10 && m != '00'){
-                m = '0' + m
-            }
-            if(s < 10 && s != '00'){
-                s = '0' + s
-            }
-            ss =(1000 - (t.getTime() + '').substring((t.getTime() + '').length - 3,99))
-            while((ss + '').length < 3){
-                ss = '0' + ss
-            }
-            if(ss == 1000){
-                ss = '000'
-            }
-            txt.innerText = h + ' : ' + m + ' : ' + s + ' : ' + ss
-        },1000/60)
-    }
-</script>
+<h1 onclick="window.location.href = 'link/'">世界辣么大 我要去看看</h1>
+<h1>钱包辣么小 哪都去不了</h1>
 </body>
 </html>
