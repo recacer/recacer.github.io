@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lottery</title>
+</head>
+<style>
+    .ofh {
+        overflow: hidden;
+    }
+
+    .fl {
+        float: left;
+        margin-left: 10px;
+    }
+    span{
+        float: left;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-right: 10px;
+        margin-top: 10px;
+        border-radius: 30px;
+    }
+
+    .red span{
+        background-color: red;
+        color: #fff;
+    }
+
+    .blue span{
+        background-color: blue;
+        color: #fff;
+    }
+
+    .button {
+        background-color: skyblue;
+        color: #fff;
+        text-align: center;
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div class="button" onclick="lottery(1)">大乐透抽奖</div>
+<div class="button" onclick="lottery(2)">双色球抽奖</div>
+<div id="content"></div>
+
+<script>
+
+    function sortNumber(a, b) {
+        return a - b
+    }
+
+    function randomNum(max, len) {
+        let arr = []
+        while (arr.length < len) {
+            let _num = parseInt(Math.random() * max + 1)
+            if (_num < 10) _num = '0' + _num
+            if (arr.length > 0) {
+                var sameBol = false
+                arr.forEach((num) => {
+                    if (_num == num) sameBol = true
+                })
+                if (!sameBol) arr.push(_num)
+            } else {
+                arr.push(_num)
+            }
+        }
+        arr.sort(sortNumber)
+        let html = ''
+        arr.forEach((num)=>{
+            html += `<span>${num}</span>`
+        })
+        return html
+    }
+
+    function htmlFun(times,type) {
+        let html = ''
+        for (let i = 0; i < times; i++) {
+            switch (type) {
+                case 1:
+                    html += `<div class="ofh">
+                                <div class="fl red">${randomNum(35, 5)}</div>
+                                <div class="fl blue">${randomNum(12, 2)}</div>
+                            </div>`
+                    break
+                case 2:
+                    html += `<div class="ofh">
+                                <div class="fl red">${randomNum(33, 6)}</div>
+                                <div class="fl blue">${randomNum(16, 1)}</div>
+                            </div>`
+                    break
+            }
+
+        }
+        return html
+    }
+
+    function lottery(type) {
+        let index = 0
+        let timer = setInterval(() => {
+            index++
+            content.innerHTML = htmlFun(5,type)
+            if (index > 60) clearInterval(timer)
+        }, 1000 / 60)
+
+    }
+</script>
+</body>
+</html>
