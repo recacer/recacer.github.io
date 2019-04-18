@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试</title>
+    <title>没卵用的东西</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 </head>
 <style>
@@ -50,8 +50,8 @@
 <body>
 <div class="button" onclick="lottery(1)">大</div>
 <div class="button" onclick="lottery(2)">双</div>
+<div class="button" onclick="lottery(3)">11-5</div>
 <div id="content"></div>
-
 <script>
 
     function sortNumber(a, b) {
@@ -95,6 +95,11 @@
                     html += `<div class="ofh">
                                 <div class="fl red">${randomNum(33, 6)}</div>
                                 <div class="fl blue">${randomNum(16, 1)}</div>
+                            </div>`
+                    break
+                case 3:
+                    html += `<div class="ofh">
+                                <div class="fl red">${randomNum(1, 5)}</div>
                             </div>`
                     break
             }
