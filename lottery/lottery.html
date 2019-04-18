@@ -112,7 +112,7 @@
         let index = 0
         let timer = setInterval(() => {
             index++
-            content.innerHTML = htmlFun(5,type)
+            content.innerHTML = htmlFun(type == 3 ? 1 : 5,type)
             if (index > 60) clearInterval(timer)
         }, 1000 / 60)
 
