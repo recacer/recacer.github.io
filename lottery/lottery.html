@@ -81,7 +81,7 @@
         }
         arr.sort(sortNumber)
         let html = ''
-        name.push(...arr)
+        name && name.push(...arr)
         arr.forEach(num => {
             html += `<span>${num}</span>`
         })
