@@ -60,43 +60,52 @@
         return a - b
     }
 
-    function randomNum(max, len) {
+    function randomNum(max, len, name) {
         let arr = []
         while (arr.length < len) {
             let _num = parseInt(Math.random() * max + 1)
             if (_num < 10) _num = '0' + _num
+            var sameBol = false
             if (arr.length > 0) {
-                var sameBol = false
                 arr.forEach((num) => {
                     if (_num == num) sameBol = true
                 })
-                if (!sameBol) arr.push(_num)
-            } else {
-                arr.push(_num)
             }
+            if(name.length > 0){
+                name.forEach(num =>{
+                    if (_num == num) sameBol = true
+                })
+            }
+
+            if (!sameBol) arr.push(_num)
         }
         arr.sort(sortNumber)
         let html = ''
-        arr.forEach((num)=>{
+        name.push(...arr)
+        arr.forEach(num => {
             html += `<span>${num}</span>`
         })
         return html
     }
 
-    function htmlFun(type,times) {
+    var allNum = []
+    var allNums = []
+    function htmlFun(type, times) {
         let html = ''
+        allNum = []
+        allNums = []
         for (let i = 0; i < times; i++) {
             switch (type) {
                 case 1:
                     html += `<div class="ofh">
-                                <div class="fl red">${randomNum(35, 5)}</div>
-                                <div class="fl blue">${randomNum(12, 2)}</div>
+                                <div class="fl red">${randomNum(35, 5, allNum)}</div>
+                                <div class="fl blue">${randomNum(12, 2, allNums)}</div>
                             </div>`
                     break
                 case 2:
                     html += `<div class="ofh">
-                                <div class="fl red">${randomNum(33, 6)}</div>
-                                <div class="fl blue">${randomNum(16, 1)}</div>
+                                <div class="fl red">${randomNum(33, 6, allNum)}</div>
+                                <div class="fl blue">${randomNum(16, 1, allNums)}</div>
                             </div>`
                     break
                 case 3:
@@ -115,12 +124,12 @@
         return html
     }
 
-    function lottery(type,num) {
-        let index = 0
+    function lottery(type, num) {
+        let index = 1
         let timer = setInterval(() => {
             index++
-            content.innerHTML = htmlFun(type,num)
-            if (index > 60) clearInterval(timer)
+            content.innerHTML = htmlFun(type, num)
+            if (index > 88) clearInterval(timer)
         }, 1000 / 60)
 
     }
